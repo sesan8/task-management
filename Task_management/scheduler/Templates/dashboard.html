@@ -1,0 +1,10 @@
+{% extends 'Index.html' %}
+{% block title %}Dashboard{% endblock %}
+{% block content %}
+    <h2>My Tasks</h2>
+    <ul>
+        {% for task in tasks %}
+            <li>{{ task.name }} - {{ task.date_and_time }} - Assigned By: {{ task.assigned_by }} - Status: {{ task.status }}</li>
+        {% endfor %}
+    </ul>
+{% endblock %}

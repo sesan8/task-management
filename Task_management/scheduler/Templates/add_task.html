@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Task</title>
+</head>
+<body>
+    <h1>Add Task</h1>
+    <form method="POST">
+        <label for="name">Task Name:</label><br>
+        <input type="text" id="name" name="name" required><br><br>
+
+        <label for="date_and_time">Date and Time:</label><br>
+        <input type="datetime-local" id="date_and_time" name="date_and_time" required><br><br>
+
+        <label for="assigned_to">Assigned To:</label><br>
+        <select id="assigned_to" name="assigned_to" required>
+            <option value="">Select User</option>
+            {% for user in users %}
+                <option value="{{ user.id }}">{{ user.name }}</option>
+            {% endfor %}
+        </select><br><br>
+
+        <button type="submit">Add Task</button>
+    </form>
+</body>
+</html>
